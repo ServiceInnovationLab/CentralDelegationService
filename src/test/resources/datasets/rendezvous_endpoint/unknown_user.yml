@@ -1,0 +1,53 @@
+clients:
+  - id: 1
+    crn: "crn:dia:test"
+    access_key: "test"
+    secret_key: "testsecret"
+    external_id: "test"
+    privacy_domain: "test"
+    service: "integration_tests"
+    admin: false
+
+users:
+  - id: 1
+    email: "user1@example.com"
+    realme_flt: "flt_one"
+
+resources:
+  - id: 1
+    client_id: 1
+    user_id: 1
+    crn: "crn:dia:test:123456789012:templates/passport-1"
+
+templates:
+  - id: 1
+    client_id: 1
+    name: "template_one"
+    content: "content goes here"
+
+delegation_types:
+  - id: 1
+    client_id: 1
+    name: "read_only"
+    crn: "crn:dia:test::delegation_types/read-only"
+    template_id: 1
+    metadata_keys: "one;two;three"
+
+rendezvouses:
+  - id: 1
+    client_id: 1
+    crn: "crn:dia:test::rendezvous/1b6880ba-a1c5-4512-8429-97c3c4a3ca81"
+    owner_code_consumed: false
+    delegate_code: "ABCDE"
+    delegate_code_consumed: false
+
+delegations:
+  - id: 1
+    client_id: 1
+    crn: "crn:dia:test::delegations/09fefd08-e08f-4aaf-9c09-ae7d2956cdaf"
+    resource_id: 1
+    delegation_type_id: 1
+    metadata: "meta1"
+    rendezvous_id: 1
+    owner_id: 1
+    owner_consent_time: 2017-07-14 16:18:37

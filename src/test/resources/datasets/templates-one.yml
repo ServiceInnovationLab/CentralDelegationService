@@ -1,0 +1,71 @@
+clients:
+  - id: 10000
+    crn: "crn:dia:test"
+    access_key: "test"
+    secret_key: "testsecret"
+    external_id: "test"
+    privacy_domain: "test"
+    service: "integration_tests"
+    admin: false
+
+users:
+  - id: 90001
+    email: "user1@example.com"
+    realme_flt: "flt_one"
+  - id: 90002
+    email: "user2@example.com"
+    realme_flt: "flt_two"
+
+resources:
+  - id: 20001
+    client_id: 10000
+    user_id: 90001
+    crn: "crn:dia:test:123456789012:templates/passport-1"
+  - id: 20002
+    client_id: 10000
+    user_id: 90001
+    crn: "crn:dia:test:123456789013:templates/passport-2"
+
+delegation_types:
+  - id: 30001
+    client_id: 10000
+    name: "read-only"
+    crn: "crn:dia:test::delegation_types/read-only"
+    email_template: "template_one"
+    metadata_keys: "one;two;three"
+  - id: 30002
+    client_id: 10000
+    name: "read-write"
+    crn: "crn:dia:test::delegation_types/read-write"
+    email_template: "template_one"
+    metadata_keys: "one;two;three"
+  - id: 30003
+    client_id: 10000
+    name: "legacy-publish"
+    crn: "crn:dia:test::delegation_types/legacy-publish"
+    email_template: "template_one"
+    metadata_keys: "one;two;three"
+    delete_time: 2017-07-14 16:18:37
+
+templates:
+  - id: 35001
+    client_id: 10000
+    name: "first_template"
+    content: >
+      <!DOCTYPE html>
+      <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+          <title th:remove="all">Template for HTML email with inline image</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        </head>
+        <body>
+          <p th:text="#{greeting(${name})}">
+            Hello, Peter Static!
+          </p>
+          <p>
+            Regards, <br />
+            <em>The Thymeleaf Team</em>
+          </p>
+        </body>
+      </html>
+    version: 1

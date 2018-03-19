@@ -1,0 +1,5 @@
+[app]
+app2.pocdev ansible_user=centos ansible_host=172.31.31.204 ansible_ssh_private_key_file=~/.ssh/dia_delegation.pem
+
+[db]
+dat1.pocdev ansible_user=centos ansible_host=172.31.27.17 ansible_ssh_private_key_file=~/.ssh/dia_delegation.pem

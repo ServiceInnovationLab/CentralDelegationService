@@ -1,0 +1,35 @@
+swarm:
+  port.offset: 1
+  debug.port: 8082
+  datasources:
+    jdbc-drivers:
+      org.postgresql:
+        driver-class-name: org.postgresql.Driver
+        xa-datasource-class-name: org.postgresql.xa.PGXADataSource
+        driver-module-name: org.postgresql
+    data-sources:
+      TestDS:
+        driver-name: org.postgresql
+        connection-url: jdbc:postgresql://127.0.0.1:5432/cds-test
+        user-name: docker
+        password: docker
+  logging:
+    loggers:
+      delegations.cds:
+        level: TRACE
+      org.wildfly.swarm:
+        level: INFO
+      org.apache.http:
+        level: INFO
+      org.apache.http.wire:
+        level: DEBUG
+      org.hibernate.SQL:
+        level: INFO
+      org.hibernate.type:
+        level: INFO
+      org.dbunit.ext.postgresql:
+        level: INFO
+      org.jboss.modules:
+        level: INFO
+      javax.ws:
+        level: DEBUG

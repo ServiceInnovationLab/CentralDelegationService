@@ -1,0 +1,17 @@
+clients:
+  - id: 10000
+    crn: "crn:dia:test"
+    access_key: "test"
+    secret_key: "testsecret"
+    external_id: "test"
+    privacy_domain: "test"
+    service: "integration_tests"
+    admin: false
+
+users:
+  - id: 90001
+    email: "user1@example.com"
+    realme_flt: "flt_one"
+  - id: 90002
+    email: "user2@example.com"
+    realme_flt: "flt_two"

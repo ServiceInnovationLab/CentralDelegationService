@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:o="http://omnifaces.org/ui">
+
+    <o:methodParam name="method" value="#{action}"/>
+
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            <h:commandButton id="#{id}"
+                             value="#{label}"
+                             action="#{method}"
+                             styleClass="btn#{empty prereq ? '' : ' btn-primary'}"/>
+        </div>
+        <ui:fragment rendered="#{not empty response}">    
+            <div class="col-sm-offset-3 col-sm-9">
+                <textarea id="#{id}Response" rows="10" class="form-control">#{response}</textarea>
+            </div>
+        </ui:fragment>
+    </div>
+
+</ui:composition>

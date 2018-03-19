@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:pa="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <div class="form-group">
+        <h:outputLabel for="#{id}" value="#{label}" styleClass="col-sm-3 control-label"/>
+        <div class="col-sm-9">
+            <h:inputText id="#{id}"
+                         value="#{value}"
+                         styleClass="form-control">
+            </h:inputText>
+        </div>
+        <h:messages errorClass="error" infoClass="info" for="#{id}" id="#{id}Message"/>
+    </div>
+
+</ui:composition>

@@ -1,0 +1,43 @@
+install-openam \
+  --serverUrl http://localhost:8080/openam \
+  --adminPwd password \
+  --policyAgentPwd Password12 \
+  --acceptLicense
+connect \
+  --private-key /root/openam \
+  http://localhost:8080/openam
+create Realms \
+  --global \
+  --body '{"name": "delegations", "parentPath": "/", "active": true, "aliases": []}'
+create OAuth2Provider \
+  --realm delegations \
+  --body '{ \
+    "advancedOAuth2Config": { \
+      "supportedScopes": [ "uma_protection", "uma_authorization" ] \
+    }}'
+create UmaProvider \
+  --realm delegations \
+  --body '{ \
+    "requireTrustElevation": false \
+  }'
+create UserSelfService \
+  --realm delegations \
+  --body '{ \
+    "signingSecretKeyAlias": "selfservicesigntest", \
+    "encryptionKeyPairAlias": "selfserviceenctest", \
+    "userRegistration": { \
+      "userRegistrationEnabled": true, \
+      "userRegistrationEmailVerificationEnabled": false \
+    } \
+  }'
+create OAuth2Clients \
+  --realm delegations \
+  --id cds-oauth-agent \
+  --body '{ \
+    "userpassword": "password", \
+    "name": [ "Central Delegation Service" ], \
+    "scopes": [ "uma_protection", "uma_authorization" ], \
+    "isConsentImplied": true, \
+    "tokenEndpointAuthMethod": "client_secret_post" \
+  }'
+:quit

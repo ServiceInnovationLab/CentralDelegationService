@@ -1,0 +1,10 @@
+[all:vars]
+db_host=10.128.100.4
+db_user=cds
+db_pwd=cds-password
+
+[app]
+app2.vagrant.delegations.org.nz ansible_user=vagrant
+
+[db]
+dat1.vagrant.delegations.org.nz ansible_user=vagrant

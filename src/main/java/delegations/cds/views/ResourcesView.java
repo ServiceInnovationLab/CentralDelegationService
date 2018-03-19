@@ -1,0 +1,23 @@
+package delegations.cds.views;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.immutables.value.Value;
+
+import java.util.List;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableResourcesView.class)
+public interface ResourcesView {
+
+    @JsonProperty("resources")
+    public abstract List<ResourceView> resources();
+
+    @JsonProperty("count")
+    @Value.Derived
+    public default int count() {
+        return resources().size();
+    }
+
+
+}

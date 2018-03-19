@@ -1,0 +1,17 @@
+clients:
+  - id: 1
+    crn: "crn:dia:test"
+    access_key: "test"
+    secret_key: "testsecret"
+    external_id: "test"
+    privacy_domain: "test"
+    service: "integration_tests"
+    admin: false
+  - id: 2
+    crn: "crn:cds:admin"
+    access_key: "admin"
+    secret_key: "adminsecret"
+    external_id: "admin"
+    privacy_domain: "cds"
+    service: "cds-admin-service"
+    admin: true

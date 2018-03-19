@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <div class='realme_widget realme_alternative_login realme_theme_light'>
+        <h2 class='realme_title'>Login with RealMe</h2>
+
+        <div class='realme_login_lockup'>
+            <img src="#{resource['realme:images/realme_logo.png']}" alt='RealMe' width='42' height='41'/>
+
+            <div class='realme_btn_margin'>
+                <a href='/saml-broker/login?relayState=${relayState}' class='realme_button btn-login' id="#{empty id ? 'realme_login' : id}">
+                    <span class='realme_button_padding'>Login<span class='realme_icon_new_window'/></span><span
+                        class='realme_icon_padlock'/></a>
+            </div>
+        </div>
+        <div class='realme_popup_position'>
+            <a class='js_toggle_popup whats_realme' href='http://www.realme.govt.nz'>What's RealMe?</a>
+
+            <div class='realme_popup_wrapper realme_arrow_top_left'>
+                <!-- realme_popup -->
+                <div class='realme_popup' style='width:420px;'>
+                    <h2 class='realme_popup_title'>To login to this service you now need a RealMe account.</h2>
+
+                    <p><b>RealMe</b> is a service from the New Zealand government and New Zealand Post that
+                        includes a single login, letting you use one username and password to access a wide
+                        range of services online.</p>
+
+                    <p>But there is much more to <b>RealMe</b> than just the convenience of a single login.</p>
+
+                    <h2 class='realme_popup_title'>Get Verified</h2>
+
+                    <p><b>RealMe</b> is also your secure online ID. Verify your <b>RealMe</b> account and use it
+                        to prove who you are online. This lets you to do lots of useful things over the internet
+                        that would normally require you to turn up in person. <a class='realme_find_out_more'
+                                                                                 target='_blank'
+                                                                                 href='http://www.realme.govt.nz'>Find
+                            out more <span class='realme_icon_find_out_more'/></a></p>
+                                <span class='arrow'>
+                                    <span class='front'/>
+                                </span>
+                </div>
+                <!-- /realme_popup -->
+            </div>
+            <!-- /realme_popup_wrapper -->
+        </div>
+    </div>
+    
+    <h:outputStylesheet library="realme" name="css/realme.css"/>
+    <h:outputScript library="jquery" name="js/jquery.min.js"/>
+    <h:outputScript library="realme" name="js/realme.js"/>
+
+</ui:composition>

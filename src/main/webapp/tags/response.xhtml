@@ -1,0 +1,13 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:o="http://omnifaces.org/ui">
+
+    <div class="form-group">
+        <h:outputLabel for="#{id}" value="#{label}"/>
+        <ui:fragment rendered="#{not empty response}">
+            <textarea id="#{id}" rows="6" class="pure-input-2-3">#{response}</textarea>
+        </ui:fragment>
+    </div>
+
+</ui:composition>

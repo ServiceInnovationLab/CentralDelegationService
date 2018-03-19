@@ -1,0 +1,33 @@
+.error {
+	color: rgb(202, 60, 60);
+}
+
+.disabled {
+	color: rgb(160, 160, 160);
+}
+
+textarea {
+	margin-top: 0.5em;
+}
+
+li.error, li.info {
+    list-style: none;
+}
+
+
+.pure-control-group li.error, .pure-control-group li.info {
+	padding-left:9em;
+}
+
+.pull-right {
+	float: right;
+}
+
+a {
+	color: #000000;
+}
+
+a:hover {
+	color: #555555;
+}
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Delegation">
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.5</version>
+  </skin>
+  <bannerLeft>
+    <name>Delegation Project</name>
+  </bannerLeft>
+  <poweredBy>
+    <logo name="Datacom" href="http://www.datacom.co.nz/"
+          img="images/datacom-logo.png"/>
+  </poweredBy>
+  <body>
+
+    <menu name="Delegation Project docs">
+      <item name="Introduction" href="index.html"/>
+      <item name="Environment Setup" href="environment-setup.html"/>
+      <item name="How to build and install" href="build.html"/>
+      <item name="Concept" href="concept.html"/>
+      <item name="Use of RealMe's RCMS" href="realme-rcms.html"/>
+      <item name="Decisions" href="decisions.html"/>
+      <item name="The API" href="api.html"/>
+      <item name="API Authentication" href="auth-design.html"/>
+      <item name="API Examples" href="api-examples.html"/>
+    </menu>
+
+  </body>
+</project>

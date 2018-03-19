@@ -1,0 +1,22 @@
+swarm:
+  bind:
+    address: 127.0.0.1
+  ds:
+    username: docker
+    password: docker
+    connection:
+      url: jdbc:postgresql://127.0.0.1:5432/cds-dev
+  logging:
+    loggers:
+      delegations.cds:
+        level: TRACE
+      org.wildfly.swarm:
+        level: INFO
+      org.apache.http:
+        level: DEBUG
+      org.apache.http.impl.conn.PoolingHttpClientConnectionManager:
+        level: INFO
+      org.hibernate.SQL:
+        level: DEBUG
+      org.hibernate.type:
+        level: TRACE

@@ -1,0 +1,33 @@
+clients:
+  - id: 1
+    crn: "crn:dia:test"
+    access_key: "test"
+    secret_key: "testsecret"
+    external_id: "test"
+    privacy_domain: "test"
+    service: "integration_tests"
+    admin: false
+    
+templates:
+  - id: 1
+    crn: "crn:dia:test::templates/test-1"
+    name: ""
+    version: 1
+    client_id: 1
+    content: "<p th:text=${greeting}>Hello World</p>"
+    is_default: true
+
+delegation_types:
+  - id: 1
+    client_id: 1
+    crn: "crn:dia:test::delegations/test-1"
+    name: "why do I have a name?"
+  - id: 2
+    client_id: 1
+    crn: "crn:dia:test::delegations/test-2"
+    name: "why do I have a name?"
+
+resources:
+  - id: 1
+    client_id: 1
+    crn: "crn:dia:test:123456789012:templates/passport-1"

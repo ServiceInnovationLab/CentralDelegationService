@@ -1,0 +1,48 @@
+---
+- hosts: db
+  become: yes
+  vars:
+    flyway_version: 4.2.0
+  tasks:
+    # Run Flyway
+    - name: Place migrations
+      copy:
+        src: "../src/main/resources/db/migration/"
+        dest: /opt/flyway-{{ flyway_version }}/sql
+
+    - name: Clean migrations
+      command: /opt/flyway-{{ flyway_version }}/flyway clean
+
+    - name: Run migrations
+      command: /opt/flyway-{{ flyway_version }}/flyway -placeholderReplacement=false migrate
+
+- hosts: app
+  become: yes
+  tasks:
+    - name: Make sure working directory exists
+      file:
+        path: /opt/cds
+        state: directory
+      tags: bin
+
+    - name: Update binary
+      copy:
+        src: "../target/cds-swarm.jar"
+        dest: /opt/cds/cds-swarm.jar
+        force: yes
+      tags: bin
+
+    - name: Service restarted
+      systemd:
+        name: cds
+        state: restarted
+      tags: service
+        
+    - name: Check server is really up
+      shell: systemctl status cds
+      register: status
+      until: status.stdout | search('WildFly Swarm is Ready')
+      retries: 30
+      delay: 2
+      tags: service
+      

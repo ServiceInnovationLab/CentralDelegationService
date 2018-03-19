@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facelet-taglib xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibary_2_2.xsd"
+                version="2.2">
+
+    <namespace>http://poc.delegations.org.nz</namespace>
+
+    <tag>
+        <tag-name>submit</tag-name>
+        <source>tags/submit.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>response</tag-name>
+        <source>tags/response.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>input</tag-name>
+        <source>tags/input.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputWithButton</tag-name>
+        <source>tags/input_with_button.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>realmeButton</tag-name>
+        <source>tags/realmeButton.xhtml</source>
+    </tag>
+
+</facelet-taglib>
